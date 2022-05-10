@@ -3,6 +3,6 @@ with open('log.txt') as file:
     word = input()
 
     for i in array:
-        if word in i:
-            f = open("gay.txt", "w")
-            f.write(str(i))
+        for word in i:
+            f = open("gay.txt", "w+")
+            f.write(i)

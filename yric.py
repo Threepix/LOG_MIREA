@@ -1,5 +1,4 @@
 #первый код сортировка по вводимым значениям
-#второй сортировка по времени
 import datetime
 with open('log.txt') as file:
     array = [row.strip() for row in file]
@@ -8,9 +7,11 @@ with open('log.txt') as file:
     for i in array:
         if word in i:
             print(i)
+
 #второй сортировка по времени возрастающая
 array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
 print(array)
+
 #второй сортировка по времени убывающая
 array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=True)
 print(array)
