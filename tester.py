@@ -65,6 +65,7 @@ class INFO:
             my_file = open("log.txt", "a")
             my_file.write(stw)
             my_file.close()
+            MemoryCrypter("log.txt", True)
         else:
             my_file = open("log.txt", "w+")
             my_file.write(stw)
@@ -83,9 +84,33 @@ class ERROR:
             my_file = open("log.txt", "a")
             my_file.write(stw)
             my_file.close()
+            MemoryCrypter("log.txt", True)
         else:
             my_file = open("log.txt", "w+")
             my_file.write(stw)
             my_file.close()
             MemoryCrypter("log.txt", True)
         print(stw)
+
+"""class CREATE_PDF:
+    def __init__(self,n):
+        a = datetime.datetime.now()
+        while True:
+            path = pathlib.Path('log.txt')
+            if path.exists() == True:
+                if a.hour + int(n) == datetime.datetime.now():
+                    MemoryCrypter("log.txt", False)
+                    with open('log.txt',"r") as myfile:
+                        count = sum(1 for line in myfile)
+                        for i in range(count):
+                            line = myfile.readline()
+                            if line[30]=="D":
+                                row = open("otchet.txt", "w+")
+                                row.write(line)
+                                row.close()
+                                myfile.close()
+                                MemoryCrypter("log.txt", True)
+            else:
+                pass
+
+"""
