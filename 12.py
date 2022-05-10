@@ -1,4 +1,7 @@
-from logger import Debug
+from tester import DEBUG,INFO,ERROR
 
-Debug('pizdec')
+DEBUG('debug')
+INFO('info')
+ERROR('error')
+DEBUG('blyat')
 

@@ -1,34 +1,21 @@
-import logging
-from logging import StreamHandler, Formatter
+import os
 import sys
+import datetime
 
-
-class Debug:
+class DEBUG:
     def __init__(self,message):
-        self.message = message
-        logger = logging.getLogger('logger')
-        logger.setLevel(logging.DEBUG)
-        handler = StreamHandler(stream=sys.stdout)
-        handler.setFormatter(Formatter(fmt='[%(asctime)s: %(levelname)s] %(message)s'))
-        logger.addHandler(handler)
-        logger.debug(message)
+        level = "DEBUG"
+        vremya = str(datetime.datetime.now())
+        print("[" + vremya + ": " + level + "]" +" "+message)
 
-class Info:
+class INFO:
     def __init__(self,message):
-        self.message = message
-        ligger = logging.getLogger('ligger')
-        ligger.setLevel(logging.INFO)
-        handler = StreamHandler(stream=sys.stdout)
-        handler.setFormatter(Formatter(fmt='[%(asctime)s: %(levelname)s] %(message)s'))
-        ligger.addHandler(handler)
-        ligger.info(message)
+        level = "INFO"
+        vremya = str(datetime.datetime.now())
+        print("[" + vremya + ": " + level + "]" +" "+message)
 
-class Error:
+class ERROR:
     def __init__(self,message):
-        self.message = message
-        lagger = logging.getLogger('lagger')
-        lagger.setLevel(logging.ERROR)
-        handler = StreamHandler(stream=sys.stdout)
-        handler.setFormatter(Formatter(fmt='[%(asctime)s: %(levelname)s] %(message)s'))
-        lagger.addHandler(handler)
-        lagger.error(message)
+        level = "ERROR"
+        vremya = str(datetime.datetime.now())
+        print("[" + vremya + ": " + level + "]" +" "+message)
