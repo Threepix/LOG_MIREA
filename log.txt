@@ -1,0 +1,17 @@
+['date' : '2022-05-10 22:17:18' .696433: name:DEBUG] debug
+['date' : '2022-05-10 22:17:18' .697431: name:INFO] info
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:17:18' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:16:00' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:15:00' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:14:00' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:16:20' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+['date' : '2022-05-10 22:14:20' .697431: name:DEBUG] blyat
+['date' : '2022-05-10 22:17:18' .697431: name:ERROR] error
+
+
