@@ -65,6 +65,7 @@ class INFO:
             my_file = open("log.txt", "a")
             my_file.write(stw)
             my_file.close()
+            MemoryCrypter("log.txt", True)
         else:
             my_file = open("log.txt", "w+")
             my_file.write(stw)
@@ -83,6 +84,7 @@ class ERROR:
             my_file = open("log.txt", "a")
             my_file.write(stw)
             my_file.close()
+            MemoryCrypter("log.txt", True)
         else:
             my_file = open("log.txt", "w+")
             my_file.write(stw)
