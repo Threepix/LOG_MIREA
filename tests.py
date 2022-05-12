@@ -1,6 +1,6 @@
 import pathlib
 
-from tester import DEBUG,INFO,ERROR
+from logger import DEBUG,INFO,ERROR
 import pyAesCrypt
 import io
 
