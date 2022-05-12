@@ -1,7 +1,18 @@
+import io
 import pathlib
 
-from logger import DEBUG,INFO,ERROR
 import pyAesCrypt
-import io
+
+from logger import DEBUG,INFO,ERROR,CREATE_pdf,SORTBY
+
+
 
 DEBUG('debug')
+ERROR('debug')
+ERROR('debug')
+ERROR('debug')
+ERROR('debug')
+ERROR('debug')
+ERROR('debug')
+ERROR('debug')
+SORTBY("last_n")
