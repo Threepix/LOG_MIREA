@@ -1,9 +1,11 @@
 import os
 import pathlib
 import datetime
+import time
+import threading
 import pyAesCrypt
 import io
-
+import schedule
 
 def MemoryCrypter(filename, is_encrypted):
     sequence_bytes = io.BytesIO()
@@ -34,6 +36,29 @@ def MemoryCrypter(filename, is_encrypted):
             )
         f.write(sequence_bytes.getvalue())
 
+def create():
+    path = pathlib.Path('log.txt')
+    if path.exists() == True:
+        MemoryCrypter("log.txt", False)
+        with open('log.txt') as file:
+            array = [row.strip() for row in file]
+        word = "ERROR"
+        path = pathlib.Path('gay.txt')
+        if path.exists() == True:
+            for i in array:
+                for word in i:
+                    f = open("gay.txt", "a")
+            f.write(i)
+            MemoryCrypter("log.txt",True)
+        else:
+            for i in array:
+                for word in i:
+                    f = open("gay.txt", "w+")
+            f.write(i)
+            MemoryCrypter("log.txt", True)
+def thr():
+    while True:
+        schedule.run_pending()
 
 class DEBUG:
     def __init__(self,message):
@@ -91,14 +116,9 @@ class ERROR:
             my_file.close()
             MemoryCrypter("log.txt", True)
         print(stw)
-        
- """class CREATE_pdf:
+
+class CREATE_pdf:
     def __init__(self,N):
-        pass
-        with open('log.txt') as file:
-            array = [row.strip() for row in file]
-        word = input()
-        for i in array:
-            for word in i:
-                f = open("gay.txt", "w+")
-        f.write(i)"""
+        blyadina = N
+        schedule.every(blyadina).minutes.do(create)
+        threading.Thread(target=thr).start()
