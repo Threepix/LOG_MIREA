@@ -23,13 +23,17 @@ for line in file:
 
 # Третий сортировка по времени возрастающая
 import datetime
-array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
-print(array)
+with open('log.txt') as file:
+    array = [row.strip() for row in file]
+    array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
+    print(array)
 
 # Четвёртая сортировка по времени убывающая
 import datetime
-array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=True)
-print(array)
+with open('log.txt') as file:
+    array = [row.strip() for row in file]
+    array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=True)
+    print(array)
 
 # вывести первые n строк
 n = int(input())
