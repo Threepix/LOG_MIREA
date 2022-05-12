@@ -1,5 +1,4 @@
 # первый код сортировка по вводимым значениям
-import datetime
 with open('log.log') as file:
     array = [row.strip() for row in file]
     word = input()
@@ -23,10 +22,12 @@ for line in file:
             break
 
 # Третий сортировка по времени возрастающая
+import datetime
 array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
 print(array)
 
 # Четвёртая сортировка по времени убывающая
+import datetime
 array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=True)
 print(array)
 
