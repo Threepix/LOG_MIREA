@@ -43,6 +43,6 @@ with open("log.log", 'r') as f:
 
 # вывести последние n строк
 n = int(input())
-f_read = open("log.log", "r")
-last_line = f_read.readlines()[-n]
+f_read = open("log.txt", "r")
+last_line = f_read.readlines()[-n::]
 print(last_line)
