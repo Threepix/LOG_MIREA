@@ -22,20 +22,14 @@ for line in array:
         else:
             break
 
-# Третий сортировка по времени возрастающая
-with open("log.txt") as file:
-    array = [row.rstrip() for row in file]
-for line in array:
-    true_line = line
-    print(true_line)
-
 
 # Четвёртая сортировка по времени убывающая
-import datetime
-with open('log.txt') as file:
-    array = [row.strip() for row in file]
-    array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=True)
-    print(array)
+file = open("log.txt",'r')
+lines = file.read().split("\n")
+file.close()
+file = open("log.txt", "w")
+file.write("\n".join(lines[::-1]))
+file.close()
 
 # вывести первые n строк
 n = int(input())
