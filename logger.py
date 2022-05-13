@@ -123,7 +123,7 @@ class CREATE_pdf:
 
 class SORTBY:
     def __init__(self,mod):
-        print("mods: sort_by_level sort_by_time up_time down_time first_n last_n")
+        print("mods: sort_by_level sort_by_time first_n last_n")
         if mod =="sort_by_level":
             path = pathlib.Path('log.log')
             if path.exists() == True:
@@ -148,47 +148,22 @@ class SORTBY:
                     n = int(input())
                     print("vvedite m\n")
                     m = int(input())
-                    file = open('log.log', "r")
-                    for line in file:
+                    with open("log.log") as file:
+                        array = [row.rstrip() for row in file]
+                    for line in array:
                         while True:
                             true_line = line
                             time_str = line[21] + line[22]
                             time = (sum(map(int, time_str.split())))
                             if ((time >= n) and (time <= m)) or (time == n) or (time == m):
                                 print(true_line)
-                                #закрыть и шифрануть файл
+                                file.close()
+                                MemoryCrypter("log.log", True)
                                 break
                             else:
-                                #как зашифровать ебаный файл
+                                file.close()
+                                MemoryCrypter("log.log", True)
                                 break
-
-        if mod =="up_time":
-            path = pathlib.Path('log.log')
-            if path.exists() == True:
-                path = pathlib.Path('log.log')
-                if path.exists() == True:
-                    MemoryCrypter("log.log", False)
-                    with open('log.log') as file:
-                        array = [row.strip() for row in file]
-                        array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'),
-                                   reverse=False)
-                        print(array)
-                    file.close()
-                    MemoryCrypter("log.log", True)
-
-        if mod =="down_time":
-            path = pathlib.Path('log.log')
-            if path.exists() == True:
-                path = pathlib.Path('log.log')
-                if path.exists() == True:
-                    MemoryCrypter("log.log", False)
-                    with open('log.log') as file:
-                        array = [row.strip() for row in file]
-                        array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'),
-                                   reverse=True)
-                        print(array)
-                    file.close()
-                    MemoryCrypter("log.log", True)
 
         if mod =="first_n":
             path = pathlib.Path('log.log')
@@ -204,7 +179,7 @@ class SORTBY:
                     f.close()
                     MemoryCrypter("log.log", True)
 
-       if mod == "last_n":
+        if mod == "last_n":
             path = pathlib.Path('log.log')
             if path.exists() == True:
                 path = pathlib.Path('log.log')
@@ -212,8 +187,9 @@ class SORTBY:
                     MemoryCrypter("log.log", False)
                     print("input n\n")
                     n = int(input())
-                    f_read = open("log.log", "r")
-                    last_line = f_read.readlines()[-n::]
-                    print(last_line)
-                    f_read.close()
+                    from collections import deque
+                    with open("log.log") as f:
+                        for row in deque(f, n):
+                            print(row.strip())
+                    f.close()
                     MemoryCrypter("log.log", True)
