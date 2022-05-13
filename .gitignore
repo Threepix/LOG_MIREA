@@ -1,0 +1,5 @@
+#all files with .log
+*.log
+#idea feachers
+./idea
+./venv
