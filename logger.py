@@ -204,16 +204,16 @@ class SORTBY:
                     f.close()
                     MemoryCrypter("log.log", True)
 
-        if mod =="last_n":
+       if mod == "last_n":
             path = pathlib.Path('log.log')
             if path.exists() == True:
                 path = pathlib.Path('log.log')
                 if path.exists() == True:
                     MemoryCrypter("log.log", False)
-                    print("input n")
+                    print("input n\n")
                     n = int(input())
                     f_read = open("log.log", "r")
-                    last_line = f_read.readlines()[-n]
+                    last_line = f_read.readlines()[-n::]
                     print(last_line)
                     f_read.close()
                     MemoryCrypter("log.log", True)
