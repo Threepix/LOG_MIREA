@@ -23,11 +23,12 @@ for line in array:
             break
 
 # Третий сортировка по времени возрастающая
-import datetime
-with open('log.txt') as file:
-    array = [row.strip() for row in file]
-    array = sorted(array, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
-    print(array)
+with open("log.txt") as file:
+    array = [row.rstrip() for row in file]
+for line in array:
+    true_line = line
+    print(true_line)
+
 
 # Четвёртая сортировка по времени убывающая
 import datetime
