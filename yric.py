@@ -9,8 +9,9 @@ with open('log.log') as file:
 # Второй код сортировка по времени от n до m часов            
 n = int(input())
 m = int(input())
-file = open('log.log', "r")
-for line in file:
+with open("log.txt") as file:
+    array = [row.rstrip() for row in file]
+for line in array:
     while True:
         true_line = line
         time_str = line[22] + line[23]
