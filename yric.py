@@ -43,7 +43,8 @@ with open("log.log", 'r') as f:
         print(f.readline())
 
 # вывести последние n строк
-n = int(input())
-f_read = open("log.txt", "r")
-last_line = f_read.readlines()[-n::]
-print(last_line)
+n=int(input())
+from collections import deque
+with open("log.txt") as f:
+    for row in deque(f,n):
+        print(row.strip())
