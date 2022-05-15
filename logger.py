@@ -117,8 +117,8 @@ class ERROR:
 
 class CREATE_pdf:
     def __init__(self,N):
-        blyadina = N
-        schedule.every(blyadina).minutes.do(create)
+        tilt = N
+        schedule.every(tilt).minutes.do(create)
         threading.Thread(target=thr).start()
 
 class SORTBY:
