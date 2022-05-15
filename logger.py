@@ -41,17 +41,17 @@ def create():
         with open('log.log') as file:
             array = [row.strip() for row in file]
         word = "ERROR"
-        path = pathlib.Path('gay.log')
+        path = pathlib.Path('otchet.log')
         if path.exists() == True:
             for i in array:
                 for word in i:
-                    f = open("gay.log", "a")
+                    f = open("otchet.log", "a")
             f.write(i)
             MemoryCrypter("log.log",True)
         else:
             for i in array:
                 for word in i:
-                    f = open("gay.log", "w+")
+                    f = open("otchet.log", "w+")
             f.write(i+"\n")
             MemoryCrypter("log.log", True)
 def thr():
