@@ -118,7 +118,7 @@ class ERROR:
 class CREATE_pdf:
     def __init__(self,N):
         tilt = N
-        schedule.every(tilt).minutes.do(create)
+        schedule.every(tilt).hours.do(create)
         threading.Thread(target=thr).start()
 
 class SORTBY:
