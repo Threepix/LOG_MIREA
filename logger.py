@@ -8,7 +8,7 @@ import schedule
 def MemoryCrypter(filename, is_encrypted):
     sequence_bytes = io.BytesIO()
     bufferSize = 64 * 1024
-    password = "yurayadamvjopueslipoluchitsya"
+    password = "bbbo-02-21"
 
 #True-зашифровать
 #False-расшифровать
